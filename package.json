@@ -1,0 +1,15 @@
+{
+  "name": "bells-and-watches",
+  "version": "1.0.0",
+  "description": "Divide the day and night according to the sun",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "y6nH",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "date-fns": "^2.6.0",
+    "sunrise-sunset-js": "^2.1.1"
+  }
+}
