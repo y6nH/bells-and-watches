@@ -4,6 +4,7 @@
   "description": "Divide the day and night according to the sun",
   "main": "index.js",
   "scripts": {
+    "build": "tsc & node build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "y6nH",
@@ -11,5 +12,9 @@
   "dependencies": {
     "date-fns": "^2.6.0",
     "sunrise-sunset-js": "^2.1.1"
+  },
+  "devDependencies": {
+    "sass": "^1.23.1",
+    "typescript": "^3.6.4"
   }
 }

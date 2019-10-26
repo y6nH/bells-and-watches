@@ -1,1 +1,5 @@
 node_modules
+static/*.css
+static/*.js
+static/*.map
+static/tsconfig.tsbuildinfo
