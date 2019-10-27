@@ -1,7 +1,7 @@
 let sass = require("sass");
 let fs = require("fs");
 
-let options = {file: "src/style.scss", outFile: "static/style.css", sourceMap: true};
+let options = {file: "src/style.scss", outFile: "dist/style.css", sourceMap: true};
 
 sass.render(options, (err, res) => {
     if(!err){

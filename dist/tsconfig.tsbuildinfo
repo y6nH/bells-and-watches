@@ -1,0 +1,112 @@
+{
+  "program": {
+    "fileInfos": {
+      "../node_modules/typescript/lib/lib.d.ts": {
+        "version": "49ff9798f592c8b7e628fd881401e68810c1b3589ecd7a41b32b3c287374cde0",
+        "signature": "49ff9798f592c8b7e628fd881401e68810c1b3589ecd7a41b32b3c287374cde0"
+      },
+      "../node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "ff5688d6b2fcfef06842a395d7ff4d5730d45b724d4c48913118c889829052a1",
+        "signature": "ff5688d6b2fcfef06842a395d7ff4d5730d45b724d4c48913118c889829052a1"
+      },
+      "../node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "2d53f3741e5a4f78a90f623387d71a1cc809bb258f10cdaec034b67cbf71022f",
+        "signature": "2d53f3741e5a4f78a90f623387d71a1cc809bb258f10cdaec034b67cbf71022f"
+      },
+      "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
+        "version": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b",
+        "signature": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b"
+      },
+      "../node_modules/typescript/lib/lib.scripthost.d.ts": {
+        "version": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9",
+        "signature": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9"
+      },
+      "../node_modules/sunrise-sunset-js/dist/index.d.ts": {
+        "version": "3ca2133c39dcf13b92f1df6b82d01956a54eda192d3ec18ef5dc22175d4ac650",
+        "signature": "3ca2133c39dcf13b92f1df6b82d01956a54eda192d3ec18ef5dc22175d4ac650"
+      },
+      "../node_modules/date-fns/typings.d.ts": {
+        "version": "90a19511f239248525ea8c80736bb3b142953a55f682a3a76405b5a9fee07548",
+        "signature": "90a19511f239248525ea8c80736bb3b142953a55f682a3a76405b5a9fee07548"
+      },
+      "../src/bells-and-watches.ts": {
+        "version": "96ba3832805e6c4fb7f9d00f3aa71a478527ec78df96b78be3d3d3c6f7a46b51",
+        "signature": "a0ce7aa0605f2bd63b164e01dbe0b656c37dc578df55f65bd64bb0609917e818"
+      }
+    },
+    "options": {
+      "incremental": true,
+      "target": 1,
+      "module": 5,
+      "allowJs": true,
+      "sourceMap": true,
+      "outDir": "./",
+      "strict": true,
+      "allowSyntheticDefaultImports": true,
+      "moduleResolution": 2,
+      "esModuleInterop": true,
+      "configFilePath": "../tsconfig.json"
+    },
+    "referencedMap": {
+      "../node_modules/typescript/lib/lib.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es5.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.dom.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.scripthost.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/sunrise-sunset-js/dist/index.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/date-fns/typings.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../src/bells-and-watches.ts": [
+        "../node_modules/sunrise-sunset-js/dist/index.d.ts",
+        "../node_modules/date-fns/typings.d.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "../node_modules/typescript/lib/lib.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es5.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.dom.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.scripthost.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/sunrise-sunset-js/dist/index.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ],
+      "../node_modules/date-fns/typings.d.ts": [
+        "../node_modules/date-fns/typings.d.ts"
+      ]
+    },
+    "semanticDiagnosticsPerFile": [
+      "../node_modules/typescript/lib/lib.d.ts",
+      "../node_modules/typescript/lib/lib.es5.d.ts",
+      "../node_modules/typescript/lib/lib.dom.d.ts",
+      "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "../node_modules/typescript/lib/lib.scripthost.d.ts",
+      "../node_modules/sunrise-sunset-js/dist/index.d.ts",
+      "../node_modules/date-fns/typings.d.ts",
+      "../src/bells-and-watches.ts"
+    ]
+  },
+  "version": "3.6.4"
+}

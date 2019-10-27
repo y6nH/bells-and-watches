@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bells and Watches</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <table id="results"></table>
+    </main>
+    <script src="main.js"></script>
+    <script>
+      (() => {
+        let target = document.getElementById("results");
+        const bw = bellsAndWatches.getDayBW();
+        bw.map((r, i) => {
+          target.innerHTML += `<tr><th>${
+            12 > i ? "Bell" : "Watch"
+          }</th><td>${r.toTimeString()}</td></tr>`;
+        });
+      })();
+    </script>
+  </body>
+</html>
