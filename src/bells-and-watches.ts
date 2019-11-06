@@ -21,9 +21,9 @@ export const getDayBW = (date?: string, lat?: string, long?: string) => {
       console.log(
         "Couldn't get position automatically. Please supply longitude and latitude."
       );
-      return dayBW(day, 0, 0);
     }
   );
+  return dayBW(day, 0, 0);
 };
 
 const dayBW = (date: Date, lat: number, long: number) => {
@@ -35,8 +35,8 @@ const dayBW = (date: Date, lat: number, long: number) => {
   // get length of day and night *starting at sunrise* - not exactly 24h
   // ÷ 12 for length of bell and watch
 
-  const bell = differenceInSeconds(rise, set) / 12;
-  const watch = differenceInSeconds(set, end) / 12;
+  const bell = differenceInSeconds(set, rise) / 12;
+  const watch = differenceInSeconds(end, set) / 12;
   const times = [] as Date[];
 
   // Add bells

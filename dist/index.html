@@ -9,19 +9,61 @@
   </head>
   <body>
     <main>
+      <header>
+        <h1>Bells and Watches</h1>
+        <p>
+          What if we kept time according to sunrise and sunset? If we split each
+          day and night into twelve equal parts – not hours, but
+          <em>bells</em> by day and <em>watches</em> by night? This calculator
+          shows the conventional time each division would start.
+        </p>
+        <p>
+          From an idea by
+          <a href="http://artsyhonker.net" target="_blank">Kathryn</a>.
+        </p>
+      </header>
+      <section class="inputs">
+        <label for="day">Select a day: </label><input type="date" id="day" />
+        <i>(leave blank for today)</i>
+        <br /><br />
+        <label for="long">Longitude: </label>
+        <input type="number" id="long" min="-180" max="180" step="0.000001" />
+        <label for="lat">Latitude: </label>
+        <input type="number" id="lat" min="-90" max="90" step="0.000001" />
+        <i>(leave blank to get your location automatically)</i>
+        <br /><br />
+        <button onclick="go()">Calculate</button>
+      </section>
       <table id="results"></table>
     </main>
     <script src="main.js"></script>
     <script>
-      (() => {
-        let target = document.getElementById("results");
-        const bw = bellsAndWatches.getDayBW();
-        bw.map((r, i) => {
-          target.innerHTML += `<tr><th>${
-            12 > i ? "Bell" : "Watch"
-          }</th><td>${r.toTimeString()}</td></tr>`;
-        });
-      })();
+      const ge = id => document.getElementById(id);
+
+      const calc = (date, lat, long) => {
+        let info = ge("info");
+        info.innerHTML = ``;
+        let target = ge("results");
+        target.innerHTML = "";
+        const bw = bellsAndWatches.getDayBW(date, lat, long);
+        if (bw) {
+          bw.map((r, i) => {
+            target.innerHTML += `<tr><th>${
+              12 > i ? `Bell ${i + 1}` : `Watch ${i - 11}`
+            }</th><td>${r.toLocaleTimeString()}</td></tr>`;
+          });
+        }
+      };
+
+      const go = () => {
+        const lat = Number.parseFloat(ge("lat").value) || undefined;
+        const long = Number.parseFloat(ge("long").value) || undefined;
+        const date = ge("day").value || undefined;
+        calc(date, lat, long);
+        return false;
+      };
+
+      go();
     </script>
   </body>
 </html>

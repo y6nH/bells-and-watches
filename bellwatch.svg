@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1.5 -1.5 3 3">
+    <!-- Night (background) -->
+    <circle r="1" fill="#014"/>
+    <!-- Bell: Path d starts at top of circle, arc has radius 1, 1; angle irrelevant; large-arc = (angle > 180) ? 1 : 0; sweep clockwise = (1); x = sin(angle); y = 1- cos(angle); rotation=(sum of previous angles) -->
+    <path fill="#fd4" d="M0,0 L0,-1 A1,1,0,0,1,0.64278760969,-0.7660444431 Z" style="transform:rotate(130deg)" />
+    <!-- Ticks: stroke-dasharray total is the circumference (2 pi * 1.1) / 24 -->
+    <circle r="1.1" style="fill:none; stroke:#111; stroke-width:0.1px; stroke-dasharray: 0.03798px 0.25px; stroke-dashoffset: 0.01899px;" />
+    <!-- Clock hand -->
+    <path d="M0,0 0,-0.9" style="transform:rotate(80deg);stroke-width:0.01px;stroke:#eee;stroke-linecap:round;filter:drop-shadow(0 0.005px 0.008px #000);" />
+    
+    <text y="-1.2" x="-0.18" font-size="0.1px" >Midnight</text>
+    <text y="1.25" x="-0.16" font-size="0.1px" >Midday</text>
+    <text y="0.04" x="-1.4" font-size="0.1px" >6 PM</text>
+    <text y="0.04" x="1.2" font-size="0.1px" >6 AM</text>
+</svg>
