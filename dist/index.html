@@ -41,8 +41,6 @@
       const ge = id => document.getElementById(id);
 
       const calc = (date, lat, long) => {
-        let info = ge("info");
-        info.innerHTML = ``;
         let target = ge("results");
         target.innerHTML = "";
         const bw = bellsAndWatches.getDayBW(date, lat, long);
