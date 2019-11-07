@@ -1,16 +1,18 @@
 import { getSunrise, getSunset } from "sunrise-sunset-js";
-import { addHours, differenceInSeconds, addSeconds } from "date-fns";
+import {
+  addHours,
+  differenceInSeconds,
+  addSeconds,
+  startOfDay
+} from "date-fns";
 
 export const getDayBW = (date?: string, lat?: string, long?: string) => {
-  let day: Date;
-  if (date) {
-    day = new Date(Date.parse(date));
-  } else {
-    day = new Date();
-  }
+  let day = startOfDay(date ? Date.parse(date) : new Date());
 
   if (lat && long) {
-    return dayBW(day, Number(lat), Number(long));
+    const latNum = Number(lat) || 0;
+    const longNum = Number(long) || 0;
+    return dayBW(day, latNum, longNum);
   }
 
   navigator.geolocation.getCurrentPosition(
@@ -23,7 +25,8 @@ export const getDayBW = (date?: string, lat?: string, long?: string) => {
       );
     }
   );
-  return dayBW(day, 0, 0);
+  // Assume we're at Greenwich Observatory
+  return dayBW(day, 51.4767365, 0);
 };
 
 const dayBW = (date: Date, lat: number, long: number) => {
