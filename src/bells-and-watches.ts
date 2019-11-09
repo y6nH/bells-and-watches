@@ -6,27 +6,50 @@ import {
   startOfDay
 } from "date-fns";
 
-export const getDayBW = (date?: string, lat?: string, long?: string) => {
-  let day = startOfDay(date ? Date.parse(date) : new Date());
+type Result = {
+  day: Date;
+  lat: number;
+  long: number;
+  times: Date[];
+}
+
+export const getDayBW = (date: string, lat: string, long: string, callback: (result: Result) => void) => {
+  const day = startOfDay(date ? Date.parse(date) : new Date());
 
   if (lat && long) {
     const latNum = Number(lat) || 0;
     const longNum = Number(long) || 0;
-    return dayBW(day, latNum, longNum);
+    return {
+      day,
+      lat: latNum,
+      long: longNum,
+      times: dayBW(day, latNum, longNum)
+    };
   }
 
   navigator.geolocation.getCurrentPosition(
-    function({ coords }) {
-      return dayBW(day, coords.latitude, coords.longitude);
+    function ({ coords }) {
+      callback({
+        day,
+        lat: coords.latitude,
+        long: coords.longitude,
+        times: dayBW(day, coords.latitude, coords.longitude)
+      });
     },
     _ => {
       console.log(
         "Couldn't get position automatically. Please supply longitude and latitude."
       );
+      // Assume we're at Greenwich Observatory
+      const latGreenwich = 51.4767365;
+      callback({
+        day,
+        lat: latGreenwich,
+        long: 0,
+        times: dayBW(day, latGreenwich, 0)
+      });
     }
   );
-  // Assume we're at Greenwich Observatory
-  return dayBW(day, 51.4767365, 0);
 };
 
 const dayBW = (date: Date, lat: number, long: number) => {

@@ -34,23 +34,30 @@
         <br /><br />
         <button onclick="go()">Calculate</button>
       </section>
-      <table id="results"></table>
+      <p id="details"></p>
+      <table id="times"></table>
     </main>
     <script src="main.js"></script>
     <script>
       const ge = id => document.getElementById(id);
-
       const calc = (date, lat, long) => {
-        let target = ge("results");
-        target.innerHTML = "";
-        const bw = bellsAndWatches.getDayBW(date, lat, long);
-        if (bw) {
-          bw.map((r, i) => {
-            target.innerHTML += `<tr><th>${
+        let details = ge("details"),
+          times = ge("times");
+        times.innerHTML = details.innerHTML = "";
+        bellsAndWatches.getDayBW(date, lat, long, bw => {
+          details.innerHTML = `${bw.day.toDateString()} at <a href="https://www.openstreetmap.org/#map=12/${bw.lat.toFixed(
+            4
+          )}/${bw.long.toFixed(
+            4
+          )}" target="_blank" title="Map of this location">longitude ${bw.long.toFixed(
+            4
+          )}, latitude ${bw.lat.toFixed(4)}</a>.`;
+          bw.times.map((r, i) => {
+            times.innerHTML += `<tr><th>${
               12 > i ? `Bell ${i + 1}` : `Watch ${i - 11}`
             }</th><td>${r.toLocaleTimeString()}</td></tr>`;
           });
-        }
+        });
       };
 
       const go = () => {
